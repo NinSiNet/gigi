@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event</title>
+	<script type="text/javascript">
+
+
+
+		function ask(){
+			var ans=confirm('winna go to youtube?');
+			if (ans) {
+				location.href='http://WWW.youtube.com';
+			}else {
+				location.href='http://WWW.google.com';
+			}
+		}
+		function hello(){
+			alert('hello');
+		}
+		function show(){
+			var name=document.getElementById('name').value;
+			alert('hello' +name);
+
+		}
+		function check(){
+			var Password=document.getElementById('Password').value;
+			var confirm_Password=document.getElementById('confirm_Password').value;
+
+			if(Password!=confirm_Password){
+				alert('Password doesnot match!');
+			return false;
+		}else{
+
+				return true;
+			
+
+			}
+		}
+
+		
+
+	</script>
+</head>
+
+<body onload="hi()">
+	<h3 id="showtime">gg</h3>
+
+	Enter your name:<input type="text" id="name" onchange="show()">
+
+	<h1>Registration form</h1>
+	<form action="go.php" method="post" onsubmit="return check()">
+	
+		Email:<input type="email" name="email" required="required"><br>
+	Password:<input type="Password" name="Password" required="required" id="Password"><br>
+	Confirm Password:<input type="Password" name="confirm_Password" required="required" id="confirm_Password"><br>
+	<input type="submit" value="Register">
+</form>
+
+<br>
+<button onclick="timer=setTimeout('hi()',3000)">Say Hi </button>
+<button onclick="clearTimeout(timer)">cancle</button>
+
+
+<script type="text/javascript">
+	function hi(){
+	 alert('hi bootcampers!');
+	}
+
+</script>
+<script type="text/javascript">
+
+setInterval('showtime()',1000);
+
+	function showtime(){
+		var now=new Date();
+		var time=now.toLocaleString();
+		document.getElementById('showtime').innerHTML=time;
+	}
+</script>
+
+
+
+</body>
+</html
